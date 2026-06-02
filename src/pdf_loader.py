@@ -68,5 +68,9 @@ def load_pdf_with_pages(file_path: str | Path) -> list[Document]:
 
 
 def find_pdf_files(directory: str | Path) -> list[Path]:
-    """Return PDF files in deterministic order."""
-    return sorted(Path(directory).glob("*.pdf"))
+    """Return real PDF files in deterministic order, excluding macOS sidecar files."""
+    return sorted(
+        path
+        for path in Path(directory).glob("*.pdf")
+        if not path.name.startswith(".") and not path.name.startswith("._")
+    )
