@@ -1,3 +1,4 @@
+# Python environment and caches
 .venv/
 __pycache__/
 *.py[cod]
@@ -7,11 +8,15 @@ __pycache__/
 .coverage
 htmlcov/
 .cache/
+
+# Local secrets and OS/editor files
 .env
 .env.*
 .DS_Store
 .files/
 agent.md
+
+# Local documents and generated artifacts
 *.pdf
 *.log
 *.sqlite
@@ -19,6 +24,7 @@ agent.md
 *.db
 *.pkl
 
+# Runtime corpus and indexes; keep empty directories in git
 data/pdfs/*
 !data/pdfs/.gitkeep
 chroma_db/*
@@ -26,4 +32,5 @@ chroma_db/*
 indexes/*
 !indexes/.gitkeep
 
+# Chainlit local configuration/uploads
 .chainlit/
